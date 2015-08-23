@@ -161,8 +161,8 @@ public class ModuleRCSFX : ModuleRCS
         inputAngular = vessel.ReferenceTransform.rotation * new Vector3(enablePitch ? vessel.ctrlState.pitch : 0f, enableRoll ? vessel.ctrlState.roll : 0f, enableYaw ? vessel.ctrlState.yaw : 0);
         if (useThrottle)
         {
-            inputLinear.y -= vessel.ctrlState.mainThrottle;
-            inputLinear.y = Mathf.Clamp(inputLinear.y, - 1f, 1f);
+            inputLinear.x -= vessel.ctrlState.mainThrottle;
+            inputLinear.x = Mathf.Clamp(inputLinear.x, - 1f, 1f);
         }
 
         // Epsilon checks (min values)
